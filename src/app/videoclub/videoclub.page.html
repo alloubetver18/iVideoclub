@@ -3,16 +3,29 @@
 
     <ion-grid class="ion-no-padding">
       <ion-row>
-        <ion-col size="2">
+        <ion-col size="2" class="back">
           <div class="link">
             <a routerLink="/home" class="ion-text-center">
               <ion-icon name="arrow-back"></ion-icon>
             </a>
           </div>
         </ion-col>
-        <ion-col size="4">
+        <ion-col size="4" class="back">
           <div>
-            <span>videoclub</span>
+            <ion-title class="page-title">
+              Videoclub
+            </ion-title>
+            <span></span>
+          </div>
+        </ion-col>
+        <ion-col size="5" class="list-icon">
+          <div>
+            <ion-button *ngIf="modoLista == true" (click)="cambiarVista()">
+              <ion-icon slot="icon-only" name="reorder-four-sharp"></ion-icon>
+            </ion-button>
+            <ion-button *ngIf="!modoLista == true" (click)="cambiarVista()">
+              <ion-icon slot="icon-only" name="apps-sharp"></ion-icon>
+            </ion-button>
           </div>
         </ion-col>
       </ion-row>
@@ -29,81 +42,58 @@
   </ion-header>
 
   <div id="container">
+    <div *ngIf="listaPeliculas.length>0; else emptyList">
+      <ion-list *ngIf="modoLista == true; else modoGrid">
+        <ion-item *ngFor="let pelicula of listaPeliculas; index as id" (click)="verPaginaDetalle(id+1)" [button]="true" detail="true">
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="{{pelicula.poster}}" />
+          </ion-thumbnail>
+          <ion-grid>
+            <ion-row class="ion-no-padding">
+              <ion-col class="ion-text-bold no-padding-left">{{pelicula.title}}</ion-col>
+            </ion-row>
+            <ion-row class="ion-no-padding">
+              <ion-col class="ion-text-bold ion-no-padding">Director: {{pelicula.director}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="no-padding-left">Año: {{pelicula.year}}</ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
 
-    <ion-list>
+      </ion-list>
 
-      <ion-item [button]="true" detail="true">
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="http://gbrain.dlsi.ua.es/videoclub/assets/imgs/posters/MV5BMjEyMjcyNDI4MF5BMl5BanBnXkFtZTcwMDA5Mzg3OA@@._V1_SX214_AL_.jpg" />
-        </ion-thumbnail>
-        <ion-grid>
-          <ion-row class="ion-no-padding">
-            <ion-col class="ion-text-bold no-padding-left">El padrino</ion-col>
-          </ion-row>
-          <ion-row class="ion-no-padding">
-            <ion-col class="ion-text-bold ion-no-padding">Director: Francis Ford Coppola</ion-col>
-          </ion-row>
-          <ion-row >
-            <ion-col class="no-padding-left">Año: 1993</ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-item>
-
-
-      <ion-item [button]="true" detail="true">
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="http://gbrain.dlsi.ua.es/videoclub/assets/imgs/posters/MV5BNDc2NTM3MzU1Nl5BMl5BanBnXkFtZTcwMTA5Mzg3OA@@._V1_SX214_AL_.jpg" />
-        </ion-thumbnail>
-        <ion-grid>
-          <ion-row class="ion-no-padding">
-            <ion-col class="ion-text-bold no-padding-left">El Padrino. Parte II</ion-col>
-          </ion-row>
-          <ion-row class="ion-no-padding">
-            <ion-col class="ion-text-bold ion-no-padding">Director: Francis Ford Coppola</ion-col>
-          </ion-row>
+      <ng-template #modoGrid>
+        <ion-grid class="ion-no-padding modoGrid">
           <ion-row>
-            <ion-col class="no-padding-left">Año: 1974</ion-col>
+            <ion-col class="movieCard" *ngFor="let pelicula of listaPeliculas; index as id" (click)="verPaginaDetalle(id+1)">
+              <div>
+                <img alt="Silhouette of mountains" src="{{pelicula.poster}}" />
+                <ion-grid>
+                  <ion-row class="ion-no-padding">
+                    <ion-col class="ion-text-bold no-padding-left">{{pelicula.title}}</ion-col>
+                  </ion-row>
+                  <ion-row class="ion-no-padding">
+                    <ion-col class="ion-text-bold ion-no-padding">Director: {{pelicula.director}}</ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col class="no-padding-left">Año: {{pelicula.year}}</ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </ion-col>
           </ion-row>
         </ion-grid>
-      </ion-item>
 
 
-      <ion-item [button]="true" detail="true">
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="http://gbrain.dlsi.ua.es/videoclub/assets/imgs/posters/MV5BMzMwMTM4MDU2N15BMl5BanBnXkFtZTgwMzQ0MjMxMDE@._V1_SX214_AL_.jpg" />
-        </ion-thumbnail>
-        <ion-grid>
-          <ion-row class="ion-no-padding">
-            <ion-col class="ion-text-bold no-padding-left">La lista de Schindler</ion-col>
-          </ion-row>
-          <ion-row class="ion-no-padding">
-            <ion-col class="ion-text-bold ion-no-padding">Director: Steven Spielberg</ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col class="no-padding-left">Año: 1993</ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-item>
+      </ng-template>
 
+    </div>
 
-      <ion-item [button]="true" detail="true">
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="http://gbrain.dlsi.ua.es/videoclub/assets/imgs/posters/MV5BMjE0ODk2NjczOV5BMl5BanBnXkFtZTYwNDQ0NDg4._V1_SY317_CR4,0,214,317_AL_.jpg" />
-        </ion-thumbnail>
-        <ion-grid>
-          <ion-row class="ion-no-padding">
-            <ion-col class="ion-text-bold no-padding-left">Pulp Fiction</ion-col>
-          </ion-row>
-          <ion-row class="ion-no-padding">
-            <ion-col class="ion-text-bold ion-no-padding">Director: Quentin Tarantino</ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col class="no-padding-left">Año: 1994</ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-item>
+    <ng-template #emptyList>
+      <p class="emptymessage">La Lista está vacía.</p>
+    </ng-template>
 
-     </ion-list>
   </div>
 
 </ion-content>

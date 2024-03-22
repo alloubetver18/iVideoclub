@@ -7,3 +7,45 @@
     display: flex;
     justify-content: center;
 }
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-title {
+  padding-left: 0;
+}
+
+.list-icon {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+ion-row{
+    width: 100%;
+    //justify-content: space-evenly;
+}
+
+.modoGrid{
+    margin-top: 1rem;
+}
+
+.movieCard {
+  margin: .1rem;
+}
+
+.movieCard div img {
+  width: 6rem;
+  display: block;
+  margin: auto;
+}
+
+.emptymessage{
+    text-align: center;
+    width: 100%;
+}
+
+

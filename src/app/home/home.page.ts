@@ -9,4 +9,8 @@ export class HomePage {
 
   constructor() {}
 
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter HomePage');
+  }
+
 }

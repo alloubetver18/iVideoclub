@@ -6,10 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./autor.page.scss'],
 })
 export class AutorPage implements OnInit {
-
-  constructor() { }
+  autor: {
+    name: string,
+    email: string,
+    twitter: string,
+    phone: string
+  };
+  constructor() {
+    this.autor = {
+      name: 'Alban Loubet Vergara',
+      email: 'alban.loubet@gmail.com',
+      twitter: '@albanloubet',
+      phone: '676584366'
+    }
+  }
 
   ngOnInit() {
+  }
+
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter AutorPage');
   }
 
 }

@@ -1,0 +1,24 @@
+ion-card img{
+    width: 100%;
+}
+
+ion-card-title, ion-card-content span {
+  font-weight: bold;
+}
+
+.link a {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-title {
+  padding-left: 0;
+  width: 1000px;
+}
