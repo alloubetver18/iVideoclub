@@ -4,7 +4,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 25%;
   transform: translateY(-50%);
 }
 
@@ -24,4 +24,11 @@
 
 #container a {
   text-decoration: none;
+}
+
+.links{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-left: 2rem;
 }
