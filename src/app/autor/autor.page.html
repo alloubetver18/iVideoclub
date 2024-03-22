@@ -1,6 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-title>autor</ion-title>
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col size="2">
+          <div class="link">
+            <a routerLink="/home" class="ion-text-center">
+              <ion-icon name="arrow-back"></ion-icon>
+            </a>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div>
+            <span>autor</span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
@@ -24,10 +39,10 @@
             <ion-icon name="book-outline"></ion-icon> <ion-label><ion-button routerLink="/curriculum"  fill="clear" class="button-text">Curriculum Vitáe</ion-button></ion-label>
           </ion-item>
           <ion-item>
-            <ion-icon name="mail"></ion-icon> <ion-label><a class="links" href=""><span class="link-title">Correo:</span> email.arroba.email.com</a></ion-label>
+            <ion-icon name="mail"></ion-icon> <ion-label><a class="links" href=""><span class="link-title">Correo:</span> email&#64;email.com</a></ion-label>
           </ion-item>
           <ion-item>
-            <ion-icon name="logo-twitter"></ion-icon> <ion-label><a class="links" href=""><span class="link-title">Twitter:</span> arroba.twitter</a></ion-label>
+            <ion-icon name="logo-twitter"></ion-icon> <ion-label><a class="links" href=""><span class="link-title">Twitter:</span> &#64;twitter</a></ion-label>
           </ion-item>
           <ion-item>
             <ion-icon name="call"></ion-icon> <ion-label><a class="links" href=""><span class="link-title">Teléfono:</span> 999888777</a></ion-label>

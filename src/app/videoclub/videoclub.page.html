@@ -1,6 +1,23 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>videoclub</ion-title>
+  <ion-toolbar color="primary">
+
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col size="2">
+          <div class="link">
+            <a routerLink="/home" class="ion-text-center">
+              <ion-icon name="arrow-back"></ion-icon>
+            </a>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div>
+            <span>videoclub</span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +27,83 @@
       <ion-title size="large">videoclub</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div id="container">
+
+    <ion-list>
+
+      <ion-item [button]="true" detail="true">
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="http://gbrain.dlsi.ua.es/videoclub/assets/imgs/posters/MV5BMjEyMjcyNDI4MF5BMl5BanBnXkFtZTcwMDA5Mzg3OA@@._V1_SX214_AL_.jpg" />
+        </ion-thumbnail>
+        <ion-grid>
+          <ion-row class="ion-no-padding">
+            <ion-col class="ion-text-bold no-padding-left">El padrino</ion-col>
+          </ion-row>
+          <ion-row class="ion-no-padding">
+            <ion-col class="ion-text-bold ion-no-padding">Director: Francis Ford Coppola</ion-col>
+          </ion-row>
+          <ion-row >
+            <ion-col class="no-padding-left">Año: 1993</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+
+      <ion-item [button]="true" detail="true">
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="http://gbrain.dlsi.ua.es/videoclub/assets/imgs/posters/MV5BNDc2NTM3MzU1Nl5BMl5BanBnXkFtZTcwMTA5Mzg3OA@@._V1_SX214_AL_.jpg" />
+        </ion-thumbnail>
+        <ion-grid>
+          <ion-row class="ion-no-padding">
+            <ion-col class="ion-text-bold no-padding-left">El Padrino. Parte II</ion-col>
+          </ion-row>
+          <ion-row class="ion-no-padding">
+            <ion-col class="ion-text-bold ion-no-padding">Director: Francis Ford Coppola</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="no-padding-left">Año: 1974</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+
+      <ion-item [button]="true" detail="true">
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="http://gbrain.dlsi.ua.es/videoclub/assets/imgs/posters/MV5BMzMwMTM4MDU2N15BMl5BanBnXkFtZTgwMzQ0MjMxMDE@._V1_SX214_AL_.jpg" />
+        </ion-thumbnail>
+        <ion-grid>
+          <ion-row class="ion-no-padding">
+            <ion-col class="ion-text-bold no-padding-left">La lista de Schindler</ion-col>
+          </ion-row>
+          <ion-row class="ion-no-padding">
+            <ion-col class="ion-text-bold ion-no-padding">Director: Steven Spielberg</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="no-padding-left">Año: 1993</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+
+      <ion-item [button]="true" detail="true">
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="http://gbrain.dlsi.ua.es/videoclub/assets/imgs/posters/MV5BMjE0ODk2NjczOV5BMl5BanBnXkFtZTYwNDQ0NDg4._V1_SY317_CR4,0,214,317_AL_.jpg" />
+        </ion-thumbnail>
+        <ion-grid>
+          <ion-row class="ion-no-padding">
+            <ion-col class="ion-text-bold no-padding-left">Pulp Fiction</ion-col>
+          </ion-row>
+          <ion-row class="ion-no-padding">
+            <ion-col class="ion-text-bold ion-no-padding">Director: Quentin Tarantino</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="no-padding-left">Año: 1994</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+     </ion-list>
+  </div>
+
 </ion-content>
